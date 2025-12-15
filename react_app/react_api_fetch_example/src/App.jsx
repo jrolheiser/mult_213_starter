@@ -2,6 +2,23 @@ import { useState, useEffect } from 'react'
 import { searchCity } from './api.js';
 import './App.css'
 
+/*
+
+General Tips for keeping your project easy to work on:
+1. Keep your children stupid (Keep your application state, in the parent component)
+  - Keep your useState() calls at the top of your App Component
+  - Pass in state values, and setter callback function as props to children components
+  - App is for Controller and Model concerns
+  - Children are for View Layer concerns
+2. Pass actions into components, not state
+3. Keep derived values out of state
+  - My state has: Recipes
+    - My derived value is: Filtered Recipes
+    - Filters for: Breakfast, holiday, with Chicken
+
+*/
+
+
 function App() {
   // I have a search query input by the user
   const [currentSearchQuery, setNewSearchQuery] = useState("");
